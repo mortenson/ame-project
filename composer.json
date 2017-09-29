@@ -16,7 +16,7 @@
     "drupal-composer/drupal-scaffold": "^2",
     "webflo/drupal-finder": "^1.0.0",
     "webmozart/path-util": "^2.3",
-    "mortenson/ame": "dev-master"
+    "mortenson/ame": "dev-8.x-1.x"
   },
   "repositories": [
     {
