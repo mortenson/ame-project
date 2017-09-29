@@ -1,0 +1,63 @@
+{
+  "name": "mortenson/ame-project",
+  "description": "A sweet project template for Ame.",
+  "type": "project",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Samuel Mortenson",
+      "role": "Confectioner"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.2",
+    "drupal-composer/drupal-scaffold": "^2",
+    "webflo/drupal-finder": "^1.0.0",
+    "webmozart/path-util": "^2.3",
+    "mortenson/ame": "dev-master"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "vcs",
+      "url":  "git@github.com:mortenson/ame.git"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "scripts/composer/ScriptHandler.php"
+    ]
+  },
+  "scripts": {
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "pre-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "pre-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::checkComposerVersion"
+    ],
+    "post-install-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "@composer drupal-scaffold"
+    ],
+    "post-update-cmd": [
+      "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+      "@composer drupal-scaffold"
+    ]
+  },
+  "extra": {
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
+    }
+  }
+}
