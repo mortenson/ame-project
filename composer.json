@@ -43,11 +43,13 @@
     ],
     "post-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "@composer drupal-scaffold"
+      "@composer drupal-scaffold",
+      "cd web/profiles/contrib/ame && npm install && npm run copy && cd -"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
-      "@composer drupal-scaffold"
+      "@composer drupal-scaffold",
+      "cd web/profiles/contrib/ame && npm install && npm run copy && cd -"
     ]
   },
   "extra": {
