@@ -26,6 +26,10 @@
     {
       "type": "vcs",
       "url":  "git@github.com:mortenson/ame.git"
+    },
+    {
+      "type": "vcs",
+      "url":  "git@github.com:mortenson/ame_stencil.git"
     }
   ],
   "autoload": {
