@@ -44,12 +44,12 @@
     "post-install-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
       "@composer drupal-scaffold",
-      "cd web/profiles/contrib/ame && npm install && npm run copy && cd -"
+      "cd web/modules/contrib/ame_stencil && npm install && npm run copy && cd -"
     ],
     "post-update-cmd": [
       "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
       "@composer drupal-scaffold",
-      "cd web/profiles/contrib/ame && npm install && npm run copy && cd -"
+      "cd web/modules/contrib/ame_stencil && npm install && npm run copy && cd -"
     ]
   },
   "extra": {
